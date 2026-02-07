@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ColorWear Clothing Store</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h2 {
+            color: #ff4d6d;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #e63956;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>👕 ColorWear Store 👖</h1>
+    <p>Trendy • Colorful • Affordable</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>T-Shirt</h2>
+        <p class="price">$15</p>
+        <button onclick="addToCart('T-Shirt')">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h2>Pant</h2>
+        <p class="price">$25</p>
+        <button onclick="addToCart('Pant')">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h2>Shirt</h2>
+        <p class="price">$20</p>
+        <button onclick="addToCart('Shirt')">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h2>Jacket</h2>
+        <p class="price">$40</p>
+        <button onclick="addToCart('Jacket')">Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    🛒 Items in Cart: <span id="cartCount">0</span>
+</footer>
+
+<script>
+    let cart = 0;
+
+    function addToCart(item) {
+        cart++;
+        document.getElementById("cartCount").innerText = cart;
+        alert(item + " added to cart!");
+    }
+</script>
+
+</body>
+</html>
